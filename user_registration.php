@@ -35,6 +35,7 @@ if (isset($_POST['username']) && isset($_POST['email']) && isset($_POST['passwor
             $query = "INSERT INTO users (name, email, password, token) VALUES ('$username', '$email', '$password', '$token')";
 
             $connect->query($query);
+            echo '{"status":"success"}';
         }
     }
 }
