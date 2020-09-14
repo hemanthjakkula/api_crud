@@ -1,0 +1,16 @@
+RewriteEngine On
+#Options +MultiViews
+#RewriteBase /api/
+
+Header add Access-Control-Allow-Methods "*"
+Header add Access-Control-Expose-Headers: "Content-Range"
+Header add Acess-Control-Request-Headers "x-requested-with"
+Header add Access-Control-Allow-Origin "*"
+Header add Access-Control-Allow-Headers "*"
+#RewriteCond %{REQUEST_FILENAME} !-f
+#RewriteRule ^(.*)$ index.php [QSA,L]
+
+Header add Access-Control-Allow-Headers "Content-Range"
+# Rewrite /foo/bar to /foo/bar.php
+#Removing the .php extension
+#RewriteRule ^([^.?]+)$ %{REQUEST_URI}.php [L]
