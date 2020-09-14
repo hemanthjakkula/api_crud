@@ -4,8 +4,8 @@ require ('db.php');
 $rest_json = file_get_contents("php://input");
 $headers = getallheaders();
 //echo $headers['authorization'];
-if (isset($headers['authorization'])) {
-    $token = $headers['authorization'];
+if (isset($headers['Authorization'])) {
+    $token = $headers['Authorization'];
     $query_for_userid = "SELECT userid FROM users WHERE token = '$token' ";
     $result = $connect->query($query_for_userid);
     $feedData = mysqli_fetch_all($result,MYSQLI_ASSOC);
