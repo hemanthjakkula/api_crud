@@ -19,7 +19,7 @@ if (isset($email) && isset($password)) {
 		//echo '{"t":"test"}';
 	}
 	else {
-		echo '{"email": "Invalid"}';
+		echo '{"token": "Invalid"}';
 		//echo ("Invalid");
 	}
 }
