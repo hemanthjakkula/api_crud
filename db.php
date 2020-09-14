@@ -1,7 +1,7 @@
 <?php
 
 
-$connect = mysqli_connect("localhost", "root", "6325", "sarayu_lab_event_management" );
+$connect = mysqli_connect("sql12.freesqldatabase.com", "sql12365554", "icz2ee5brJ", "sql12365554" );
 if ($connect->connect_error) {
 	die("Connection Failed: " .$connect->connect_error);
 }
