@@ -4,6 +4,7 @@ require ('db.php');
 $rest_json = file_get_contents("php://input");
 $headers = getallheaders();
 echo $headers['authorization'];
+echo "working";
 if (isset($headers['authorization'])) {
     $token = $headers['authorization'];
     $query_for_userid = "SELECT userid FROM users WHERE token = '$token' ";
