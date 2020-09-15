@@ -1,6 +1,7 @@
 <?php
 require('db.php');
 $rest_json = file_get_contents("php://input");
+var_dump($rest_json);
 $jsonData = json_decode($rest_json, true);
 if (isset($jsonData['username']) && isset($jsonData['email']) && isset($jsonData['password'])) {
 
