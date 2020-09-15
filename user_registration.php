@@ -1,6 +1,8 @@
 <?php
 require('db.php');
-echo ($_POST['username']);
+echo "hiiii";
+print_r($_POST);
+
 $rest_json = file_get_contents("php://input");
 var_dump($rest_json);
 $jsonData = json_decode($rest_json, true);
