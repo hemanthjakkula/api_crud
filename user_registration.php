@@ -1,13 +1,12 @@
 <?php
 require('db.php');
-if (isset($_POST['username']) && isset($_POST['email']) && isset($_POST['password'])) {
+$rest_json = file_get_contents("php://input");
+$jsonData = json_decode($rest_json, true);
+if (isset($jsonData['username']) && isset($jsonData['email']) && isset($jsonData['password'])) {
 
-    $username = $_POST['username'];
-    $email = $_POST['email'];
-    $password = $_POST['password'];
-    echo $usernmae;
-    echo $email;
-    echo $password;
+    $username = $jsonData['username'];
+    $email = $jsonData['email'];
+    $password = $jsonData['password'];
 
     if (isset($email)) {
         $query = "SELECT email FROM users WHERE email = '$email'  ";
