@@ -14,7 +14,6 @@ if (isset($jsonData['username']) && isset($jsonData['email']) && isset($jsonData
         $result = $connect->query($query);
         $resultrow = mysqli_num_rows($result);
         $feedData = mysqli_fetch_all($result, MYSQLI_ASSOC);
-        //var_dump($feedData);
         if ($resultrow >= 1) {
             echo '{"email":"AlreadyExists"}';
         } else {
@@ -34,7 +33,6 @@ if (isset($jsonData['username']) && isset($jsonData['email']) && isset($jsonData
             $token_length = 15;
             //generating the token
             $token = RandomStringGenerator($token_length);
-            //saving into the DB
             $query = "INSERT INTO users (name, email, password, token) VALUES ('$username', '$email', '$password', '$token')";
 
             $connect->query($query);
