@@ -1,10 +1,10 @@
 <?php
 require('db.php');
-//echo "hiiii";
+echo "hiiii";
 //print_r($_POST);
 
-//$rest_json = file_get_contents("php://input");
-//var_dump($rest_json);
+$rest_json = file_get_contents("php://input");
+var_dump($rest_json);
 //$jsonData = json_decode($rest_json, true);
 if (isset($_POST['username']) && isset($_POST['email']) && isset($_POST['password'])) {
 
