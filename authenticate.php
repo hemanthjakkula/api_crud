@@ -3,7 +3,7 @@
 require('db.php');
 $rest_json = file_get_contents("php://input");
 $jsonData = json_decode($rest_json, true);
-//print_r($jsonData);
+print_r($jsonData);
 //echo $jsonData["email"];
 $email = $jsonData["username"];
 $password = $jsonData["password"];
