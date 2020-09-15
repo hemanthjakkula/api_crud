@@ -5,6 +5,9 @@ if (isset($_POST['username']) && isset($_POST['email']) && isset($_POST['passwor
     $username = $_POST['username'];
     $email = $_POST['email'];
     $password = $_POST['password'];
+    echo $usernmae;
+    echo $email;
+    echo $password;
 
     if (isset($email)) {
         $query = "SELECT email FROM users WHERE email = '$email'  ";
