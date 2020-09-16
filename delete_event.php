@@ -39,5 +39,15 @@ if (isset($headers['Authorization'])) {
           $query = "DELETE FROM calender_events WHERE userid = '$logged_in_userid' AND event_id IN ('" . $event_ids . "') ";
           $connect->query($query);
 
+          $query1 = "SELECT event_id, userid,event_name, event_date,event_start_time, event_end_time FROM calender_events WHERE event_id = LAST_INSERT_ID() AND userid='$logged_in_userid'  ";
+        $result = $connect->query($query1);
+
+        $feedData = mysqli_fetch_all($result, MYSQLI_ASSOC);
+        $feedData = json_encode($feedData[0]);
+
+
+        echo ($feedData);
+
      }
+
 }
