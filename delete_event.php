@@ -35,6 +35,9 @@ if (isset($headers['Authorization'])) {
      if (isset($jsonData['id'])) {
 
           $event_ids = implode("','", $jsonData['id']);
+          echo"eventId printed";
+          echo $event_ids;
+
      }
 
      if (isset($event_ids)) {
@@ -53,5 +56,6 @@ if (isset($headers['Authorization'])) {
 
 
      }
+     echo "Eventid not present";
 
 }
