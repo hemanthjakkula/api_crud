@@ -36,17 +36,19 @@ if (isset($headers['Authorization'])) {
 
      if (isset($event_ids)) {
 
-          $query = "DELETE FROM calender_events WHERE userid = '$logged_in_userid' AND event_id IN ('" . $event_ids . "') ";
-          $connect->query($query);
+        $query = "DELETE FROM calender_events WHERE userid = '$logged_in_userid' AND event_id IN ('" . $event_ids . "') ";
+        $connect->query($query);
 
-          $query1 = "SELECT event_id, userid,event_name, event_date,event_start_time, event_end_time FROM calender_events WHERE event_id = LAST_INSERT_ID() AND userid='$logged_in_userid'  ";
+        $query1 = "SELECT c.userid, c.event_name, c.event_date, c.event_start_time, c.event_end_time, c.event_id FROM calender_events c LEFT JOIN users u ON c.userid = u.userid WHERE u.userid='$logged_in_userid' ORDER BY c.event_date ";
+            
         $result = $connect->query($query1);
-
+    
         $feedData = mysqli_fetch_all($result, MYSQLI_ASSOC);
-        $feedData = json_encode($feedData[0]);
+        $feedData = json_encode($feedData);
 
 
         echo ($feedData);
+
 
      }
 
