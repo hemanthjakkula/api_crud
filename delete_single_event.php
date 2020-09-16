@@ -27,6 +27,9 @@ if (isset($headers['Authorization'])) {
      
      $jsonData = json_decode($params["filter"], true);
      var_dump($jsonData);
+     echo $jsonData["id"];
+     echo "hi";
+     echo $jsonData['id'];
      $events_ids = $jsonData['id'];
      echo $event_ids;
 
