@@ -53,6 +53,4 @@ if (isset($headers['Authorization'])) {
 
 
      }
-     echo "Eventid not present";
-
 }
