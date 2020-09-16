@@ -26,10 +26,9 @@ if (isset($headers['Authorization'])) {
      parse_str($url_components['query'], $params);
      
      $jsonData = json_decode($params["filter"], true);
-     var_dump($jsonData);
+
      if (isset($jsonData['id'])) {
             if (count($jsonData['id'], 1)>2) {
-                echo (count($jsonData['id'], 1));
                 $event_ids = implode("','", $jsonData['id']);
             } else {
                 $event_ids = $jsonData['id'];
@@ -42,7 +41,6 @@ if (isset($headers['Authorization'])) {
 
         $query = "DELETE FROM calender_events WHERE userid = '$logged_in_userid' AND event_id IN ('" . $event_ids . "') ";
         $connect->query($query);
-        echo $query;
 
         $query1 = "SELECT c.userid, c.event_name, c.event_date, c.event_start_time, c.event_end_time, c.event_id FROM calender_events c LEFT JOIN users u ON c.userid = u.userid WHERE u.userid='$logged_in_userid' ORDER BY c.event_date ";
             
