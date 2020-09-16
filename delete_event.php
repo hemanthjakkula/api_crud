@@ -26,12 +26,7 @@ if (isset($headers['Authorization'])) {
      parse_str($url_components['query'], $params);
      
      $jsonData = json_decode($params["filter"], true);
-     $jsonData1 = json_decode($rest_json, true);
-     var_dump($jsonData1);
-     echo $jsonData1[event_id];
-
-     
-     $headers = getallheaders();
+     var_dump($jsonData);
      if (isset($jsonData['id'])) {
 
           $event_ids = implode("','", $jsonData['id']);
