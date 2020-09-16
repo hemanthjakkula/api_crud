@@ -30,9 +30,9 @@ if (isset($headers['Authorization'])) {
      if (isset($jsonData['id'])) {
 
           $event_ids = implode("','", $jsonData['id']);
-          echo"eventId printed";
-          echo $event_ids;
-
+     }
+     else {
+        $event_ids = $jsonData['id'];
      }
 
      if (isset($event_ids)) {
