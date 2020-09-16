@@ -4,7 +4,6 @@ $rest_json = file_get_contents("php://input");
 $headers = getallheaders();
 
 if (isset($headers['Authorization'])) {
-    echo "Authorization present";
      $token = $headers['Authorization'];
      $query_for_userid = "SELECT userid FROM users WHERE token = '$token' ";
      $result = $connect->query($query_for_userid);
