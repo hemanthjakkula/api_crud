@@ -43,11 +43,11 @@ if (isset($headers['Authorization'])) {
             
         $result = $connect->query($query1);
     
-        $feedData = mysqli_fetch_all($result, MYSQLI_ASSOC);
-        $feedData = json_encode($feedData);
+        $feedData1 = mysqli_fetch_all($result, MYSQLI_ASSOC);
+        $feedData1 = json_encode($feedData1);
 
-
-        echo ($feedData);
+        echo "h1111";
+        echo ($feedData1);
 
 
      }
