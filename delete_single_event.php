@@ -35,7 +35,7 @@ if (isset($headers['Authorization'])) {
 
      if (isset($event_ids)) {
 
-        $query = "DELETE FROM calender_events WHERE userid = '$logged_in_userid' AND event_id = "$jsonData['id']" ";
+        $query = "DELETE FROM calender_events WHERE userid = '$logged_in_userid' AND event_id = '$events_ids' ";
         $connect->query($query);
 
         $query1 = "SELECT c.userid, c.event_name, c.event_date, c.event_start_time, c.event_end_time, c.event_id FROM calender_events c LEFT JOIN users u ON c.userid = u.userid WHERE u.userid='$logged_in_userid' ORDER BY c.event_date ";
