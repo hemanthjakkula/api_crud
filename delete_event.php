@@ -36,6 +36,7 @@ if (isset($headers['Authorization'])) {
 
           
      }
+     echo $event_ids;
 
      if (isset($event_ids)) {
 
