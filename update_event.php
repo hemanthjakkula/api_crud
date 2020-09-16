@@ -9,7 +9,7 @@ if (isset($headers['Authorization'])) {
     $query_for_userid = "SELECT userid FROM users WHERE token = '$token' ";
     $result = $connect->query($query_for_userid);
     $feedData = mysqli_fetch_all($result, MYSQLI_ASSOC);
-    
+
     $logged_in_userid = $feedData[0]['userid'];
 
     $jsonData = json_decode($rest_json, true);

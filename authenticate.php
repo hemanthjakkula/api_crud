@@ -14,9 +14,7 @@ if (isset($email) && isset($password)) {
 	$feedData = mysqli_fetch_all($result, MYSQLI_ASSOC);
 	if ($resultrow == 1) {
 		echo json_encode($feedData[0]);
-		
 	} else {
 		echo '{"token": "Invalid"}';
-
 	}
 }
