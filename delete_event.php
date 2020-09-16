@@ -29,7 +29,7 @@ if (isset($headers['Authorization'])) {
      var_dump($jsonData);
      if (isset($jsonData['id'])) {
         echo (count($jsonData['id'], 1));
-            if (count($jsonData['id'], 1)>2) {
+            if (count($jsonData['id'], 1)>=2) {
                 $event_ids = implode("','", $jsonData['id']);
             } else {
                 if (isset($jsonData['id'][0])) {
