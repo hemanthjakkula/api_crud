@@ -4,7 +4,7 @@ $rest_json = file_get_contents("php://input");
 $headers = getallheaders();
 
 if (isset($headers['Authorization'])) {
-    
+    echo "Authorization present";
      $token = $headers['Authorization'];
      $query_for_userid = "SELECT userid FROM users WHERE token = '$token' ";
      $result = $connect->query($query_for_userid);
@@ -27,7 +27,8 @@ if (isset($headers['Authorization'])) {
      parse_str($url_components['query'], $params);
      
      $jsonData = json_decode($params["filter"], true);
-     $jsonData1 = json_decode($params["filter"], true);
+     $jsonData1 = json_decode($rest_json, true);
+     var_dump($jsonData1)
      echo $jsonData1[event_id];
 
      
