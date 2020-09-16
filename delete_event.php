@@ -26,7 +26,7 @@ if (isset($headers['Authorization'])) {
      parse_str($url_components['query'], $params);
      
      $jsonData = json_decode($params["filter"], true);
-
+     var_dump($jsonData);
      if (isset($jsonData['id'])) {
             if (count($jsonData['id'], 1)>2) {
                 $event_ids = implode("','", $jsonData['id']);
