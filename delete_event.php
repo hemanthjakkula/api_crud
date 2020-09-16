@@ -46,7 +46,6 @@ if (isset($headers['Authorization'])) {
         $feedData1 = mysqli_fetch_all($result, MYSQLI_ASSOC);
         $feedData1 = json_encode($feedData1);
 
-        echo "h1111";
         echo ($feedData1);
 
 
