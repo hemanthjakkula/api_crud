@@ -34,9 +34,7 @@ if (isset($headers['Authorization'])) {
             } else {
                 if (count($jsonData['id'], 1)==1) {
                     $event_ids = $jsonData['id'][0];
-                } else {
-                $event_ids = $jsonData['id'];
-            }
+                } 
             }
           
      }
